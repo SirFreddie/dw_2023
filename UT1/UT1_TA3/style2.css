@@ -1,0 +1,45 @@
+body {
+    border: .1em solid grey;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1em;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color: steelblue;
+    border-bottom: .05em solid steelblue;
+}
+
+h2 {
+    color: darkgrey;
+    font-size: medium;
+}
+
+h2.contact {
+    color: black;
+    font-size: larger;
+    font-style: normal;
+}
+
+ul {
+    padding-left: 1.5em;
+}
+
+li {
+    font-style: normal;
+}
+
+li:not(:last-child) {
+    margin-bottom: .2em;
+}
+
+.email {
+    color: coral;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.web {
+    color: coral;
+    font-weight: bold;
+}

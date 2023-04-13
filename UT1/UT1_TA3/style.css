@@ -1,0 +1,50 @@
+body {
+    border: .6em solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1em;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color: hotpink;
+    border-bottom: .3em dotted purple;
+}
+
+h2 {
+    color: darkgrey;
+    font-size: medium;
+}
+
+h2.contact {
+    color: black;
+    font-size: larger;
+    font-style: italic;
+}
+
+footer {
+    background-color: rgba(148, 0, 211, 0.114);
+    border: .3em solid darkviolet;
+}
+
+ul {
+    padding-left: 1.5em;
+}
+
+li {
+    font-style: normal;
+}
+
+li:not(:last-child) {
+    margin-bottom: .2em;
+}
+
+.email {
+    color: limegreen;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.web {
+    color: coral;
+    font-weight: bold;
+}

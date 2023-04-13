@@ -1,0 +1,19 @@
+li:nth-child(even){
+    background-color: blueviolet;
+}
+
+li:nth-child(odd){
+    background-color: brown;
+}
+
+#btn{
+    background-color: aqua;
+}
+
+#inputData{
+    background-color: crimson;
+}
+
+body{
+    background-color: lawngreen;
+}

@@ -7,6 +7,7 @@ const inputDescUl = document.getElementById("desc-ul");
 const listaU = document.getElementById("listaU");
 const btnLoadU = document.getElementById("loadU");
 const btnSwitch = document.getElementById("switch");
+const btnCat = document.getElementById("btn-cat")
 
 // Loads data from server when DOM is loaded
 window.addEventListener("DOMContentLoaded", () => {
@@ -19,6 +20,10 @@ window.addEventListener("DOMContentLoaded", () => {
     .catch((err) => {
         console.error(err);
     });
+})
+
+btnCat.addEventListener('click', () => {
+    addCatsk(listaU)
 })
 
 // When clicking the load data button, loads the tasks from the server
@@ -80,25 +85,15 @@ function removeDataUl(event) {
         let itemId = clickedElement.parentNode.id;
         const listElement = clickedElement.parentNode.parentNode
         listElement.remove();
-        deleteTask(itemId);
+        deleteTask(itemId)
+            .catch(err => console.error(err))
     }
 }
 
 async function addData(listRef, value) {
     let newValue = document.createElement('li')
     if (value.title === 'cat') {
-        catCount++;
-        getCats()
-            .then((res) => {
-                const fact = res.fact;
-                newValue.innerHTML = `
-                <div id="${value.id}" class="card">
-                    <div id="card-title" class="card-title">Random Cat Fact ${catCount}</div>
-                    <div id="card-desc" class="card-desc">${fact}</div>
-                </div>
-                `
-            })
-            
+        addCatsk(listRef)            
     } else {
         newValue.innerHTML = `
         <div id="${value.id}" class="card">
@@ -108,6 +103,22 @@ async function addData(listRef, value) {
         `
     }
     listRef.appendChild(newValue) 
+}
+
+async function addCatsk(listRef) {
+    let newValue = document.createElement('li')
+    catCount++;
+    getCats()
+        .then((res) => {
+            const fact = res.fact;
+            newValue.innerHTML = `
+            <div id="${idGen++}" class="card">
+                <div id="card-title" class="card-title">Random Cat Fact ${catCount}</div>
+                <div id="card-desc" class="card-desc">${fact}</div>
+            </div>
+            `
+            listRef.appendChild(newValue) 
+        })          
 }
 
 async function getTasks() {

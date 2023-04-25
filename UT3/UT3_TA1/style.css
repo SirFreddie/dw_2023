@@ -1,26 +1,38 @@
+
+body {
+  font-family: cursive;
+  margin: 0;
+  background: url('https://cdn.shopify.com/s/files/1/0565/7080/6458/products/cartoon-cat-wall-mural-plain.jpg?v=1640095561');
+}
+
+nav {
+  width: 100%;
+  height: 5em;
+  background-color: steelblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 button {
   background-color: rgb(208, 212, 212);
+  width: 10em;
+  height: 5em;
+  transition: transform .2s; 
+  border-radius: 1em;
 }
 
 button:hover {
   cursor: pointer;
-}
-
-#inputData {
-  background-color: crimson;
-}
-
-body {
-  background: url('https://cdn.shopify.com/s/files/1/0565/7080/6458/products/cartoon-cat-wall-mural-plain.jpg?v=1640095561');
-
+  transform: scale(1.2);
 }
 
 h1 {
-  text-align: center;
-  color: black;
-  background-color: slategrey;
-  border-radius: 5em;
-  width: 50%;
+  color: whitesmoke;
+  font-size: 2.5em;
+  font-weight: bolder;
+  margin: 0;
 }
 
 .title-container {
@@ -49,18 +61,21 @@ li {
   height: 14em;
   background-color: steelblue;
   border-radius: 1em;
+  cursor: pointer;
+  transition: transform .2s; 
 }
 
 .card:hover {
   cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card-title {
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: bolder;
-  font-size: 1.5em;
+  font-size: 1.2em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,7 +86,6 @@ li {
 }
 
 .card-desc {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   height: 8em;
   padding: 0.8em;
   overflow-y: auto;
@@ -129,6 +143,12 @@ input:checked + .slider:before {
 
 input {
   width: 25%;
+  border: .1em solid #2196f3;;
+}
+
+input:focus, input:hover {
+  border: .2em solid #2196f3;
+  outline: none;
 }
 
 .btn-container {
@@ -139,8 +159,6 @@ input {
 }
 
 #btn-ul {
-  width: 10em;
-  height: 5em;
   background-color: green;
   color: white;
   border: none;
@@ -148,21 +166,37 @@ input {
 
 #loadU {
   color: white;
-  width: 5em;
-  height: 2.5em;
-  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);;
+  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+  border: none;
+}
+
+#loadU:hover {
+  background: linear-gradient(130deg, red, orange, yellow, green, blue, indigo, violet, red);
 }
 
 #btn-ul:hover {
   background-color: rgb(0, 118, 0);
 }
 
+#btn-cat {
+  background-color: steelblue;
+  color: white;
+  border: none;
+}
+
+#btn-cat:hover {
+ background-color: rgb(45, 85, 118); 
+}
+
 #desc-ul {
   display: block;
   height: 5em;
+  width: 25%;
+  border: .1em solid #2196f3;
+  resize: none;
 }
 
-#map {
-  width: 600px;
-  height: 600px;
+#desc-ul:focus, #desc-ul:hover {
+  border: .2em solid #2196f3;
+  outline: none;
 }

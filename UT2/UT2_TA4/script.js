@@ -49,13 +49,18 @@ btnSwitch.addEventListener("change", function() {
 
 btnUl.addEventListener('click', () => {
     if(inputDataUl && listaU && inputDataUl.value) {
+        idGen++;
         const task = {
-            "id": idGen++,
+            "id": idGen,
             "title": inputDataUl.value,
             "description": "Random description of new post.",
             "done": false
         }
-        addData(listaU, task)
+        createTask(task)
+            .then(() => {
+                addData(listaU, task)
+            })
+            .catch(err => console.error(err))
     }
 })
 
@@ -113,4 +118,12 @@ async function createTask(value) {
 }
 
 async function deleteTask(id) {
+    const settings = {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    }
+
+    fetch(`https://my-json-server.typicode.com/SirFreddie/db-json/tasks/${id}`, settings);
 }
